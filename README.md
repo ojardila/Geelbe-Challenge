@@ -27,7 +27,7 @@ just send us the link.
 
 After [Installing docker](https://docs.docker.com/install/) just execute:
 ```shell
-make start
+make start && make composer install
 ```
 # How to execute?
 For running:
@@ -36,3 +36,18 @@ For running:
 make run
 ```
 ![Running](http://g.recordit.co/WhgMmtwR5x.gif)
+
+
+# How to test?
+For testing:
+
+```shell
+make test
+```
+
+Coverage:
+
+```shell
+make test-coverage
+```
+![Running](http://g.recordit.co/Hez27Zdskb.gif)
