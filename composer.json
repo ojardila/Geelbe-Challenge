@@ -1,0 +1,17 @@
+{
+    "name": "oscar/geelbe",
+    "authors": [
+        {
+            "name": "Oscar Ardila",
+            "email": "oscar3425@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {"GeelbeChallenge\\": "src/"}
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.4",
+        "victorjonsson/markdowndocs": "^1.3"
+    }
+}
