@@ -21,3 +21,18 @@ operators or `else`.
 
 Create a repository on GitLab, GitHub or any other similar service and
 just send us the link.
+
+
+# Installation
+
+After [Installing docker](https://docs.docker.com/install/) just execute:
+```shell
+make start
+```
+# How to execute?
+For running:
+
+```shell
+make run
+```
+![Running](http://g.recordit.co/WhgMmtwR5x.gif)
