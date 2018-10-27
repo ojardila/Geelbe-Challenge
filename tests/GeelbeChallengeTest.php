@@ -4,6 +4,7 @@ use GeelbeChallenge\Calculators\CalcDefault;
 use GeelbeChallenge\Calculators\CalcThreeMultiple;
 use GeelbeChallenge\Calculators\CalcFiveMultiple;
 use GeelbeChallenge\Calculators\CalcThreeAndFiveMultiple;
+use GeelbeChallenge\Calculators\Handler;
 
 use GeelbeChallenge\GeelbeChallenge;
 use PHPUnit\Framework\TestCase;
@@ -57,10 +58,22 @@ class GeelbeChallengeTest extends TestCase {
 		$this->assertEquals(true, $isMultiple);
 	}
 
+	public function testThreeMultipleFail() {
+		$isMultiple = $this->threeMultiple->isMultiple(1);
+		$this->assertInternalType('bool', $isMultiple);
+		$this->assertEquals(false, $isMultiple);
+	}
+
 	public function testFiveMultiple() {
 		$isMultiple = $this->fiveMultiple->isMultiple(5);
 		$this->assertInternalType('bool', $isMultiple);
 		$this->assertEquals(true, $isMultiple);
+	}
+
+	public function testFiveMultipleFail() {
+		$isMultiple = $this->fiveMultiple->isMultiple(6);
+		$this->assertInternalType('bool', $isMultiple);
+		$this->assertEquals(false, $isMultiple);
 	}
 
 	public function testfiveAndThreeMultiple() {
@@ -68,6 +81,12 @@ class GeelbeChallengeTest extends TestCase {
 		$this->assertInternalType('bool', $isMultiple);
 		$this->assertEquals(true, $isMultiple);
 	}
+	public function testfiveAndThreeMultipleFail() {
+		$isMultiple = $this->fiveAndThreeMultiple->isMultiple(16);
+		$this->assertInternalType('bool', $isMultiple);
+		$this->assertEquals(false, $isMultiple);
+	}
+
 	public function testDefault() {
 		$isDefault = $this->default->isMultiple(15);
 		$this->assertInternalType('bool', $isDefault);
@@ -79,6 +98,7 @@ class GeelbeChallengeTest extends TestCase {
 		$this->assertInternalType('string', $isMultiple);
 		$this->assertEquals($this::THREE_LABEL, $isMultiple);
 	}
+
 
 	public function testFiveLabel() {
 		$isMultiple = $this->fiveMultiple->getLabel(5);
@@ -132,5 +152,19 @@ class GeelbeChallengeTest extends TestCase {
 
 	}
 
+	public function testThreeMultipleInstanceof() {
+		$this->assertInstanceOf(CalcThreeMultiple::class, $this->threeMultiple);
+	}
 
+	public function testFiveMultipleInstanceof() {
+		$this->assertInstanceOf(CalcFiveMultiple::class, $this->fiveMultiple);
+	}
+
+	public function testTFiveAndThreeMultipleInstanceof() {
+		$this->assertInstanceOf(CalcThreeAndFiveMultiple::class, $this->fiveAndThreeMultiple);
+	}
+
+	public function testDefaultInstanceof() {
+		$this->assertInstanceOf(CalcDefault::class, $this->default);
+	}
 }
