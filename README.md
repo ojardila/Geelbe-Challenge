@@ -35,7 +35,7 @@ For running:
 ```shell
 make run
 ```
-![Running](http://g.recordit.co/WhgMmtwR5x.gif)
+![Running](http://g.recordit.co/1y6WzuETc4.gif)
 
 
 # How to test?
